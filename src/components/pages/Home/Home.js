@@ -1,6 +1,9 @@
 import React, { useEffect, useState } from 'react';
+import { Link } from 'react-router-dom';
 import axios from 'axios';
 import parse from 'html-react-parser';
+import Navbar from '../../Navbar';
+import './Home.css';
 
 const Home = () => {
   const [values, setValues] = useState({
@@ -15,10 +18,9 @@ const Home = () => {
 
   useEffect(() => {
     axios
-      .get('https://jobs.github.com/positions.json?page=4')
+      .get('https://jobs.github.com/positions.json')
       .then((response) => {
         setValues({ ...values, data: response.data });
-        console.log(response.data);
       })
       .catch((error) => {
         console.log(error);
@@ -37,10 +39,8 @@ const Home = () => {
 
       return setTimeout(() => {
         setValues({ ...values, errors: false });
-      }, 3000);
+      }, 2000);
     }
-
-    console.log(values);
   };
 
   const jobSearchForm = () => (
@@ -65,7 +65,7 @@ const Home = () => {
         <div className='col-3'>
           <select className='form-control' onChange={handleChange('select')}>
             <option value='' disabled selected hidden>
-              Please Choose...
+              Job Type
             </option>
             <option value='part'>Part Time</option>
             <option value='full'>Full Time</option>
@@ -102,43 +102,11 @@ const Home = () => {
     </form>
   );
 
-  const pagination = () => (
-    <div aria-label='Page navigation example'>
-      <ul className='pagination'>
-        <li className='page-item'>
-          <a className='page-link' href='#'>
-            Previous
-          </a>
-        </li>
-        <li className='page-item'>
-          <a className='page-link' href='#'>
-            1
-          </a>
-        </li>
-        <li className='page-item'>
-          <a className='page-link' href='#'>
-            2
-          </a>
-        </li>
-        <li className='page-item'>
-          <a className='page-link' href='#'>
-            3
-          </a>
-        </li>
-        <li className='page-item'>
-          <a className='page-link' href='#'>
-            Next
-          </a>
-        </li>
-      </ul>
-    </div>
-  );
-
   const postingCard = () => (
     <div>
-      {data &&
+      {data ? (
         data.map((post, index) => (
-          <div className='posting-container p-1' key={index}>
+          <div className='posting-container ' key={index}>
             <div className='posting-head'>
               <div className='posting-head-left'>
                 <img
@@ -146,7 +114,7 @@ const Home = () => {
                   src={post.company_logo}
                   alt='company_logo'
                 />
-                <div className='posting-company-name'>
+                <div className='posting-company-name-title'>
                   {' '}
                   {post.title} | {post.company}
                 </div>
@@ -171,7 +139,8 @@ const Home = () => {
                       d='M0 4.5A1.5 1.5 0 0 1 1.5 3h13A1.5 1.5 0 0 1 16 4.5v1.384l-7.614 2.03a1.5 1.5 0 0 1-.772 0L0 5.884V4.5zm5-2A1.5 1.5 0 0 1 6.5 1h3A1.5 1.5 0 0 1 11 2.5V3h-1v-.5a.5.5 0 0 0-.5-.5h-3a.5.5 0 0 0-.5.5V3H5v-.5z'
                     />
                   </svg>
-                  {post.type}
+
+                  <span className='posting-blue'>{post.type}</span>
                 </div>
                 <div className='posting-company-name'>
                   <svg
@@ -188,7 +157,14 @@ const Home = () => {
                       d='M0 3h16v11a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2V3zm6.5 4a1 1 0 1 0 0-2 1 1 0 0 0 0 2zm4-1a1 1 0 1 1-2 0 1 1 0 0 1 2 0zm2 1a1 1 0 1 0 0-2 1 1 0 0 0 0 2zm-8 2a1 1 0 1 1-2 0 1 1 0 0 1 2 0zm2 1a1 1 0 1 0 0-2 1 1 0 0 0 0 2zm4-1a1 1 0 1 1-2 0 1 1 0 0 1 2 0zm2 1a1 1 0 1 0 0-2 1 1 0 0 0 0 2zm-8 2a1 1 0 1 1-2 0 1 1 0 0 1 2 0zm2 1a1 1 0 1 0 0-2 1 1 0 0 0 0 2zm4-1a1 1 0 1 1-2 0 1 1 0 0 1 2 0z'
                     />
                   </svg>
-                  {post.created_at}
+                  <span className='posting-blue'>
+                    {' '}
+                    {new Date(post.created_at).toLocaleDateString('en-US', {
+                      month: 'long',
+                      day: 'numeric',
+                      year: 'numeric',
+                    })}
+                  </span>
                 </div>
                 <div className='posting-company-name'>
                   <svg
@@ -206,34 +182,57 @@ const Home = () => {
                     <path fillRule='evenodd' d='M6.5 15.5v-7h1v7h-1z' />
                     <path d='M2.5 11h1v1h-1v-1zm2 0h1v1h-1v-1zm-2 2h1v1h-1v-1zm2 0h1v1h-1v-1zm6-10h1v1h-1V3zm2 0h1v1h-1V3zm-4 2h1v1h-1V5zm2 0h1v1h-1V5zm2 0h1v1h-1V5zm-2 2h1v1h-1V7zm2 0h1v1h-1V7zm-4 0h1v1h-1V7zm0 2h1v1h-1V9zm2 0h1v1h-1V9zm2 0h1v1h-1V9zm-4 2h1v1h-1v-1zm2 0h1v1h-1v-1zm2 0h1v1h-1v-1z' />
                   </svg>
-                  {post.location}
+                  <span className='posting-blue'>{post.location}</span>
                 </div>
               </div>
             </div>
 
             <div className='posting-bottom'>
-              <div className='posting-bottom-dec'>{parse(post.description)}</div>
+              <div className='posting-bottom-dec'>
+                {parse(post.description.replace(/(<([^>]+)>)/gi, '').substr(0, 500))} [ .
+                . . ]
+              </div>
 
-              <div className='posting-bottom-btn'>
-                <button type='button' className='btn btn-primary'>
-                  Read More
-                </button>
+              <div className='posting-bottom-btn mt-3'>
+                <Link
+                  to={{
+                    pathname: '/job-post',
+                    state: {
+                      post: post,
+                    },
+                  }}
+                >
+                  <button type='button' className='btn btn-primary'>
+                    Read More
+                  </button>
+                </Link>
               </div>
             </div>
           </div>
-        ))}
+        ))
+      ) : (
+        <div className='spinner-home-container '>
+          <div className='spinner-border text-primary spinner-home' role='status'>
+            <span className='sr-only'>Loading...</span>
+          </div>
+        </div>
+      )}
     </div>
   );
 
   return (
-    <div className='container mt-5'>
-      {errors && (
-        <div className='alert alert-danger' role='alert'>
-          Please Fill out all feilds!
-        </div>
-      )}
-      {jobSearchForm()}
-      {postingCard()}
+    <div>
+      <Navbar backBtn={false} />
+
+      <div className='container mt-5'>
+        {errors && (
+          <div className='alert alert-danger' role='alert'>
+            Please Fill out all feilds!
+          </div>
+        )}
+        {jobSearchForm()}
+        {postingCard()}
+      </div>
     </div>
   );
 };

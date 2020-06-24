@@ -1,0 +1,87 @@
+/* Spinner Home */
+.spinner-home-container {
+  text-align: center;
+  margin: 13rem;
+}
+
+.spinner-home {
+  width: 5rem;
+  height: 5rem;
+}
+
+/* Posting Cards */
+.posting-container {
+  border: solid 1px lightgray;
+  padding: 1rem;
+  margin: 2rem 0;
+  border-radius: 5px;
+}
+
+.posting-head {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 1rem;
+}
+
+/* Company left card */
+.posting-head-left {
+  display: flex;
+  align-items: center;
+}
+
+.posting-company-logo {
+  width: 10rem;
+  height: 4rem;
+  border: solid 1px lightgray;
+  border-radius: 5px;
+  padding: 0.5rem;
+}
+
+.posting-company-name-title {
+  margin-left: 1rem;
+  font-weight: 700;
+  width: 20rem;
+}
+
+/* Company right card */
+.posting-head-right {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  font-size: 1rem;
+}
+
+.posting-company-name {
+  margin-left: 1.5rem;
+}
+
+.posting-blue {
+  color: rgb(1, 147, 196);
+  margin-left: 0.1rem;
+  font-size: 0.9rem;
+  font-weight: 400;
+}
+
+/* Bottom Dec */
+.posting-bottom-dec {
+  font-family: 'Poppins', sans-serif;
+  font-size: 1rem;
+  font-size: 0.9rem;
+  letter-spacing: 1px;
+}
+
+/* Indvidual Post */
+.post-head {
+  display: flex;
+  align-items: center;
+}
+
+.post-img {
+  width: 11rem;
+  height: 5rem;
+  border: solid 1px lightgray;
+  padding: 1rem;
+  border-radius: 5px;
+  margin-right: 3rem;
+}

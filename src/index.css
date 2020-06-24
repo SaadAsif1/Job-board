@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300&display=swap');
+
 .container {
   max-width: 1000px;
   margin: auto;
@@ -6,6 +8,12 @@
 /* Navbar */
 nav {
   border-bottom: solid 1px rgb(214, 214, 214);
+}
+
+.nav-container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
 }
 
 /* Job Search */
