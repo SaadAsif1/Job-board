@@ -1,0 +1,15 @@
+.container {
+  max-width: 1000px;
+  margin: auto;
+}
+
+/* Navbar */
+nav {
+  border-bottom: solid 1px rgb(214, 214, 214);
+}
+
+/* Job Search */
+.job-search-container {
+  background-color: #f4f4f4;
+  border-radius: 5px;
+}
