@@ -58,7 +58,7 @@
 
 .posting-blue {
   color: rgb(1, 147, 196);
-  margin-left: 0.1rem;
+  margin-left: 0.3rem;
   font-size: 0.9rem;
   font-weight: 400;
 }
@@ -69,19 +69,4 @@
   font-size: 1rem;
   font-size: 0.9rem;
   letter-spacing: 1px;
-}
-
-/* Indvidual Post */
-.post-head {
-  display: flex;
-  align-items: center;
-}
-
-.post-img {
-  width: 11rem;
-  height: 5rem;
-  border: solid 1px lightgray;
-  padding: 1rem;
-  border-radius: 5px;
-  margin-right: 3rem;
 }

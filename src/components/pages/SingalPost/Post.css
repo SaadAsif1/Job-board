@@ -1,0 +1,90 @@
+/* Indvidual Post */
+.post-container {
+  border: solid 1px lightgray;
+  padding: 1rem 2rem;
+  border-radius: 10px;
+}
+
+.post-head {
+  display: flex;
+  align-items: center;
+  margin-bottom: 2rem;
+}
+
+.post-img {
+  width: 11rem;
+  height: 5rem;
+  border: solid 1px lightgray;
+  padding: 1rem;
+  border-radius: 5px;
+  margin-right: 2.5rem;
+}
+
+.post-head-title {
+  font-size: 1.5rem;
+  font-weight: 700;
+  margin-bottom: 0.3rem;
+}
+
+.post-head-sub-title {
+  font-size: 1rem;
+  color: grey;
+  font-weight: 300;
+  font-family: 'Poppins', sans-serif;
+  letter-spacing: 1px;
+}
+
+/* post btns */
+.post-btns-container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding-bottom: 2rem;
+  margin-bottom: 2rem;
+  border-bottom: solid 1px lightgray;
+}
+
+.post-btns-solid {
+  display: block;
+  background-color: #007bff;
+  border: none;
+  padding: 0.5rem 1rem;
+  border-radius: 20px;
+  width: 100%;
+  color: white;
+  margin: 0 1rem;
+  text-align: center;
+  transition: 0.2s;
+}
+
+.post-btns-outline {
+  display: block;
+  border: solid 0.2rem #007bff;
+  background-color: white;
+  padding: 0.3rem 1rem;
+  color: black;
+  border-radius: 20px;
+  width: 90%;
+  margin: 0 1rem;
+  text-align: center;
+  transition: 0.2s;
+}
+
+.post-btns-solid:hover,
+.post-btns-outline:hover {
+  text-decoration: none;
+}
+
+.post-btns-solid:hover {
+  background-color: #0062ca;
+  color: white;
+}
+
+.post-btns-outline:hover {
+  background-color: #f4f4f4;
+  color: black;
+}
+
+.post-dec {
+  font-family: 'Poppins', sans-serif;
+}
