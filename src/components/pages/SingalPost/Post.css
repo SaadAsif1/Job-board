@@ -42,6 +42,7 @@
   padding-bottom: 2rem;
   margin-bottom: 2rem;
   border-bottom: solid 1px lightgray;
+  color: white;
 }
 
 .post-btns-solid {
@@ -51,7 +52,6 @@
   padding: 0.5rem 1rem;
   border-radius: 20px;
   width: 100%;
-  color: white;
   margin: 0 1rem;
   text-align: center;
   transition: 0.2s;
@@ -87,4 +87,44 @@
 
 .post-dec {
   font-family: 'Poppins', sans-serif;
+}
+
+@media (max-width: 700px) {
+  /* Container */
+  .post-container {
+    padding: 0.5rem;
+    border: none;
+  }
+
+  /* btns */
+  .post-btns-container {
+    display: block;
+  }
+
+  .post-btns-outline {
+    margin: 0.5rem 0;
+    width: 100%;
+    margin-bottom: 0.8rem;
+  }
+
+  .post-btns-solid {
+    margin: 0.5rem 0;
+    width: 100%;
+  }
+
+  /* Post Head */
+  .post-head {
+    display: block;
+    text-align: center;
+  }
+
+  .post-img {
+    margin-bottom: 1rem;
+    margin-right: 0;
+  }
+
+  .post-head-title {
+    line-height: 2rem;
+    margin-bottom: 1rem;
+  }
 }

@@ -53,11 +53,15 @@
 }
 
 .posting-company-name {
-  margin-left: 1.5rem;
+  padding: 0.15em 0.4em 0.1em;
+  background: rgba(150, 150, 150, 0.06);
+  border: 1px solid rgba(100, 100, 100, 0.2);
+  border-bottom-width: 2px;
+  border-radius: 3px;
+  margin-left: 1rem;
 }
 
 .posting-blue {
-  color: rgb(1, 147, 196);
   margin-left: 0.3rem;
   font-size: 0.9rem;
   font-weight: 400;
@@ -69,4 +73,77 @@
   font-size: 1rem;
   font-size: 0.9rem;
   letter-spacing: 1px;
+}
+
+/* Search input */
+.form-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+}
+
+.search-input {
+  width: 25%;
+  margin: 0 0.5rem;
+}
+
+.search-input-btn {
+  width: 15%;
+}
+
+@media (max-width: 1000px) {
+  .posting-head {
+    display: block;
+  }
+
+  /* Company left card */
+  .posting-head-left {
+    display: block;
+    text-align: center;
+  }
+
+  .posting-company-name-title {
+    margin: 0;
+    margin: 1rem auto;
+  }
+
+  /* Company right card */
+  .posting-head-right {
+    margin: 1rem auto;
+    justify-content: center;
+  }
+
+  .read-btn {
+    text-align: center;
+    width: 100%;
+  }
+}
+
+@media (max-width: 700px) {
+  .form-row {
+    display: block;
+  }
+
+  .search-input {
+    width: 100%;
+    margin: 0.5rem 0;
+  }
+
+  .search-input-btn {
+    width: 100%;
+    margin: 0.5rem 0;
+  }
+}
+
+@media (max-width: 600px) {
+  /* Company right card */
+  .posting-head-right {
+    display: block;
+    text-align: center;
+    width: 15rem;
+  }
+
+  .posting-company-name {
+    margin-bottom: 0.5rem;
+  }
 }

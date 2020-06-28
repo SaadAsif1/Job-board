@@ -73,7 +73,7 @@ const Home = () => {
   const jobSearchForm = () => (
     <form className='job-search-container p-4'>
       <div className='form-row'>
-        <div className='col-4'>
+        <div className='search-input'>
           <input
             type='text'
             className='form-control'
@@ -81,7 +81,7 @@ const Home = () => {
             onChange={handleChange('lang')}
           />
         </div>
-        <div className='col-3'>
+        <div className='search-input'>
           <input
             type='text'
             className='form-control'
@@ -89,7 +89,7 @@ const Home = () => {
             onChange={handleChange('city')}
           />
         </div>
-        <div className='col-3'>
+        <div className='search-input'>
           <select className='form-control' onChange={handleChange('select')}>
             <option value='' disabled selected hidden>
               Job Type
@@ -98,7 +98,7 @@ const Home = () => {
             <option value='full'>Full Time</option>
           </select>
         </div>
-        <div className='col'>
+        <div className='search-input-btn'>
           <button
             onClick={handleSubmit}
             style={{ width: '100%' }}
@@ -229,9 +229,11 @@ const Home = () => {
                       },
                     }}
                   >
-                    <button type='button' className='btn btn-primary'>
-                      Read More
-                    </button>
+                    <div className='read-btn'>
+                      <button type='button' className='btn read-btn  btn-primary'>
+                        Read More
+                      </button>
+                    </div>
                   </Link>
                 </div>
               </div>

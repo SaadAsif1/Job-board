@@ -45,7 +45,7 @@ class Navbar extends Component {
         })}
       >
         <div className='container nav-container'>
-          <h3>Simple Job Board</h3>
+          <h3>Software Developer Jobs</h3>
 
           {this.props.backBtn && (
             <Link to='/'>
