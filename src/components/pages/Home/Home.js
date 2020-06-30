@@ -194,6 +194,7 @@ const Home = () => {
                     </span>
                   </div>
                   <div className='posting-company-name'>
+                    {/* SVG */}
                     <svg
                       className='bi bi-building'
                       width='1em'
