@@ -4,6 +4,8 @@ import Home from './components/pages/Home/Home';
 import SingalPost from './components/pages/SingalPost/Post';
 import NotFound from './components/pages/NotFound';
 
+// Bring in 404 page
+
 const App = () => {
   return (
     <div>
