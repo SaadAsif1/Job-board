@@ -6,15 +6,13 @@ import NotFound from './components/pages/NotFound';
 
 const App = () => {
   return (
-    <div>
-      <BrowserRouter>
-        <Switch>
-          <Route component={Home} path='/' exact />
-          <Route component={SingalPost} path='/job-post' exact />
-          <Route component={NotFound} />
-        </Switch>
-      </BrowserRouter>
-    </div>
+    <BrowserRouter>
+      <Switch>
+        <Route component={Home} path='/' exact />
+        <Route component={SingalPost} path='/job-post' exact />
+        <Route component={NotFound} />
+      </Switch>
+    </BrowserRouter>
   );
 };
 

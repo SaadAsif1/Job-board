@@ -24,7 +24,7 @@ const Home = () => {
     });
 
     axios
-      .get('https://jobs.github.com/positions.json')
+      .get('https://cors-anywhere.herokuapp.com/https://jobs.github.com/positions.json')
       .then((response) => {
         setValues({ ...values, data: response.data });
       })
@@ -60,7 +60,7 @@ const Home = () => {
 
     axios
       .get(
-        `https://jobs.github.com/positions.json?description=${lang}&location=${newCity}&full_time=${newSelect}`
+        `https://cors-anywhere.herokuapp.com/https://jobs.github.com/positions.json?description=${lang}&location=${newCity}&full_time=${newSelect}`
       )
       .then((response) => {
         setValues({ ...values, data: response.data });
